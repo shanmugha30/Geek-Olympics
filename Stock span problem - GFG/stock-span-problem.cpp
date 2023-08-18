@@ -21,8 +21,9 @@ class Solution
        vector<int> ans;
        stack<pair<int,int>> st;
        ans.push_back(1);
+       int i=0;
        
-       for(int i=0; i < n ;i++){
+      while(i < n){
            
            if(!st.empty()){
                while(!st.empty()){
@@ -31,7 +32,7 @@ class Solution
                        break;
                    }
                    else{
-                   st.pop();
+                      st.pop();
                    }
                 }
                 if(st.empty()){
@@ -39,6 +40,7 @@ class Solution
                 }
             }
            st.push({price[i],i});
+           i++;
        }
        return ans;
     }
